@@ -5,6 +5,7 @@ const API_URL = "http://api.quotable.io/random";
 let Display_Msg = document.getElementById("msg");
 let Typed_Word = document.getElementById("mywords");
 let button_Pressed = document.getElementById("btn");
+console.log(button_Pressed);
 
 let TimeStart;
 let TimeEnd;
@@ -70,12 +71,12 @@ const wordCounter = (str) => {
 Typed_Word.disabled = false;
 // BUTTON PRESSED TO SHOW DATA ON H2 AND CALLING THE API
 button_Pressed.addEventListener("click", () => {
-  if (button_Pressed.innerText === "Start") {
+  if (button_Pressed.innerText === "Enter Into A typing Race") {
     Typed_Word.disabled = false;
     Game_Start();
   } else if (button_Pressed.innerText === "Done") {
     Typed_Word.disabled = true;
-    button_Pressed.innerText = "Start";
+    button_Pressed.innerText = "Enter Into A typing Race";
     Game_End();
   }
 });

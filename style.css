@@ -40,7 +40,7 @@ body {
 
 .twopart {
   display: flex;
-  width: 60%;
+  width: 80%;
   margin: auto;
   margin-top: 2.6rem;
   gap: 4rem;
@@ -53,6 +53,9 @@ body {
   border-radius: 1rem;
   background-image: linear-gradient(to right, #7bb09b, #77f96d);
   box-shadow: -1px -1px 34px 4px #e7e3a5;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 4rem;
 }
 .partone button {
   width: 7rem;
@@ -60,6 +63,16 @@ body {
   border-radius: 1rem;
   font-size: 1.5rem;
   background-color: chartreuse;
+  border: none;
+}
+
+.partone img {
+  width: 60%;
+}
+
+.partone h2 {
+  font-weight: bolder;
+  padding: 10px;
 }
 
 .parttwo {
@@ -70,11 +83,13 @@ body {
   gap: 2rem;
   background-image: linear-gradient(to right, #00bbff, #00ffd0);
   box-shadow: -1px -1px 34px 4px #928af1;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 4rem;
 }
 
-.partone h2 {
-  font-weight: bolder;
-  padding: 10px;
+.parttwo img {
+  width: 60%;
 }
 
 .parttwo h2 {
@@ -87,15 +102,60 @@ body {
   height: 3rem;
   border-radius: 1rem;
   font-size: 1.5rem;
-  background-color: blue;
+  background-color: rgb(64, 64, 252);
+  border: none;
 }
 
 #navItems > a {
   font-weight: 900;
 }
 
-.body {
+body {
   background-color: aquamarine;
   height: 100vh;
   padding: 6rem;
+}
+
+@media only screen and (max-width: 800px) {
+  .twopart {
+    display: block;
+    width: 80%;
+    margin: auto;
+    margin-top: 2.6rem;
+    gap: 4rem;
+  }
+  .partone {
+    margin-bottom: 2rem;
+  }
+  .heading {
+    width: 100%;
+  }
+  body {
+    padding: 2rem;
+    padding-top: 6rem;
+  }
+
+  .partone img {
+    width: 100%;
+  }
+  .parttwo img {
+    width: 100%;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(10, 48%, 49%);
+  /* border-radius: 100vw; */
+  /* margin-block: 0.5em; */
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(86, 0, 0);
+  /* border-radius: 100vw; */
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(98, 15, 0);
 }

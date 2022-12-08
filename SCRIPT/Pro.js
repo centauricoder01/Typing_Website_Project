@@ -52,7 +52,6 @@ QuoteInputElement.addEventListener("input", () => {
       QuoteInputElement.value = null;
       startTimer();
     });
-    console.log("tudasljfsdlkf");
   }
 });
 
@@ -64,28 +63,30 @@ const Get_Api_Data = async () => {
 };
 
 // CALLING THE API FUNCTION
-let values = Get_Api_Data().then((res) => {
-  QuoteDisplayElement.innerText = "";
+const Start_the_Call = () =>
+  Get_Api_Data().then((res) => {
+    QuoteDisplayElement.innerText = "";
 
-  // PASTING THE DATA ON THE WEBPAGE WITH SPAN TAG SO THAT WE CAN MATCH THE VALUES OF EACH ONE
+    // PASTING THE DATA ON THE WEBPAGE WITH SPAN TAG SO THAT WE CAN MATCH THE VALUES OF EACH ONE
 
-  res.split("").forEach((char) => {
-    const CharcterSpan = document.createElement("span");
-    CharcterSpan.innerText = char;
-    QuoteDisplayElement.appendChild(CharcterSpan);
+    res.split("").forEach((char) => {
+      const CharcterSpan = document.createElement("span");
+      CharcterSpan.innerText = char;
+      QuoteDisplayElement.appendChild(CharcterSpan);
+    });
+
+    // MAKING THE VALUE TO NULL IF WE HAVE NEW DATA FROM THE API
+    QuoteInputElement.value = null;
+    startTimer();
   });
-
-  // MAKING THE VALUE TO NULL IF WE HAVE NEW DATA FROM THE API
-  QuoteInputElement.value = null;
-  startTimer();
-});
 
 // MAKING THE TIMER FUNCTION OVER HERE
 let starttime;
+let id;
 function startTimer() {
   timerElement.innerText = 0;
   starttime = new Date();
-  setInterval(() => {
+  id = setInterval(() => {
     timerElement.innerText = getTimerTime();
   }, 1000);
 }
@@ -93,3 +94,11 @@ function startTimer() {
 function getTimerTime() {
   return Math.floor((new Date() - starttime) / 1000);
 }
+
+const stop_Typing = () => {
+  timerElement.innerText = 0;
+  QuoteInputElement.value = null;
+  QuoteDisplayElement.innerText = "";
+  console.log("Inside stop typing");
+  clearInterval(id);
+};
