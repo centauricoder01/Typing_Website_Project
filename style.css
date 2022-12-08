@@ -14,40 +14,88 @@ body {
 }
 
 .heading {
-  width: 35%;
+  width: 70%;
   margin: auto;
-  border: 2px solid red;
   text-align: left;
-  padding-right: 5rem;
-  padding-left: 5rem;
   font-weight: bolder;
   box-shadow: -1px 20px 29px -2px rgba(0, 0, 0, 0.58);
   -webkit-box-shadow: -1px 20px 29px -2px rgb(183 183 183 / 58%);
   align-items: center;
   background-image: linear-gradient(to right, #31c7d89c, #1117d236);
   border-radius: 2rem;
-  margin-top: 2rem;
+  padding: 1rem;
+}
+
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 .heading h1 {
   font-weight: 900;
+  text-align: center;
 }
 
 .twopart {
   display: flex;
   width: 60%;
   margin: auto;
-  margin-top: 4rem;
+  margin-top: 2.6rem;
+  gap: 4rem;
 }
 
 .partone {
-  border: 2px solid red;
+  border: none;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 1rem;
+  background-image: linear-gradient(to right, #7bb09b, #77f96d);
+  box-shadow: -1px -1px 34px 4px #e7e3a5;
+}
+.partone button {
+  width: 7rem;
+  height: 3rem;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  background-color: chartreuse;
 }
 
 .parttwo {
-  border: 2px solid blue;
+  border: none;
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  gap: 2rem;
+  background-image: linear-gradient(to right, #00bbff, #00ffd0);
+  box-shadow: -1px -1px 34px 4px #928af1;
+}
+
+.partone h2 {
+  font-weight: bolder;
+  padding: 10px;
+}
+
+.parttwo h2 {
+  font-weight: bolder;
+  padding: 10px;
+}
+
+.parttwo button {
+  width: 7rem;
+  height: 3rem;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  background-color: blue;
 }
 
 #navItems > a {
   font-weight: 900;
+}
+
+.body {
+  background-color: aquamarine;
+  height: 100vh;
+  padding: 6rem;
 }
