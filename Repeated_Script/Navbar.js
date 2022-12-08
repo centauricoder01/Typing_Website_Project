@@ -11,8 +11,8 @@ export const navigationBar = (
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <a class="nav-link" href="../index.html">Home</a>
-                        <a class="nav-link" href="../HTML/Pro_Player.html">Beginner</a>
-                        <a class="nav-link" href="../HTML/Beginner.html">Pro</a>
+                        <a class="nav-link" href="../HTML/Pro_Player.html">Pratice</a>
+                        <a class="nav-link" href="../HTML/Beginner.html">Test</a>
                         <a style="display:${
                           !token ? "block" : "none"
                         }" class="nav-link" href="./HTML/Login.html">login</a>

@@ -5,7 +5,6 @@ const API_URL = "http://api.quotable.io/random";
 let Display_Msg = document.getElementById("msg");
 let Typed_Word = document.getElementById("mywords");
 let button_Pressed = document.getElementById("btn");
-console.log(button_Pressed);
 
 let TimeStart;
 let TimeEnd;
@@ -18,11 +17,14 @@ const Apicalling = async () => {
 
 async function Game_Start() {
   let Getting_Random_Data = await Apicalling();
+  Display_Msg.style.color = "white";
   Display_Msg.innerText = Getting_Random_Data;
   let Data = new Date();
   TimeStart = Data.getTime();
   button_Pressed.innerText = "Done";
 }
+
+let speed;
 
 const Game_End = () => {
   let date = new Date();
@@ -33,9 +35,8 @@ const Game_End = () => {
   let wordCount = wordCounter(totalstr);
   // MAIN SPEED COUNTING OF YOUR WEBSITE
 
-  let speed = Math.round((wordCount / totalTime) * 60);
-  alert("Your Speed is ", speed);
-  console.log(speed);
+  speed = Math.round((wordCount / totalTime) * 60);
+  // alert("Your Speed is ", speed);
 
   let checking_Value = Checking_Val(Display_Msg.innerText, totalstr);
 };
@@ -53,15 +54,13 @@ const Checking_Val = (Api_value, User_value) => {
     }
   });
 
-  let ErrorWords = Api_v.length - count;
+  if (speed > 35) {
+    Display_Msg.style.color = "#9fff9f";
+  } else {
+    Display_Msg.style.color = "red";
+  }
 
-  alert(
-    count +
-      "correct out of" +
-      Api_v.length +
-      "ans the Error words are " +
-      ErrorWords
-  );
+  Display_Msg.innerText = `Your Speed is ${speed} WPS, and You have ${count} Words Correct out of ${Api_v.length}`;
 };
 
 const wordCounter = (str) => {
@@ -70,8 +69,10 @@ const wordCounter = (str) => {
 };
 Typed_Word.disabled = false;
 // BUTTON PRESSED TO SHOW DATA ON H2 AND CALLING THE API
+
 button_Pressed.addEventListener("click", () => {
   if (button_Pressed.innerText === "Enter Into A typing Race") {
+    Typed_Word.value = null;
     Typed_Word.disabled = false;
     Game_Start();
   } else if (button_Pressed.innerText === "Done") {
