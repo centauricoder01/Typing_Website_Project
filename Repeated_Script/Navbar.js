@@ -1,7 +1,4 @@
-export const navigationBar = (
-  token = "Hello world",
-  name = "Rajendra patel"
-) => {
+export const navigationBar = (token, name) => {
   return `<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #e3f2fd;" >
             <div class="container-fluid" id="navItems">
                 <a class="navbar-brand" href="../index.html">Typer</a>
@@ -13,21 +10,7 @@ export const navigationBar = (
                         <a class="nav-link" href="../index.html">Home</a>
                         <a class="nav-link" href="../HTML/Pro_Player.html">Pratice</a>
                         <a class="nav-link" href="../HTML/Beginner.html">Test</a>
-                        <a style="display:${
-                          !token ? "block" : "none"
-                        }" class="nav-link" href="./HTML/Login.html">login</a>
-                        <li style="display:${
-                          token ? "block" : "none"
-                        }" class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            ${name}
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="../HTML/Beginner.html">Beginner</a></li>
-                            <li><a class="dropdown-item" href="../HTML/Pro_Player.html">Pro</a></li>
-                            <li id="logoutBtn" class="dropdown-item">Logout</li>
-                        </ul>
-                        </li>
+                        
                     </div>
                 </div>
             </div>

@@ -1,16 +1,14 @@
 body {
   align-items: center;
   margin: 0;
-  /* background-color: #574b72; */
   color: white;
 }
 .mainDiv {
   width: 100%;
   margin: auto;
   background: #174c85;
-  margin-top: 3rem;
+  padding-top: 9rem;
   height: 100vh;
-  border: 2px solid red;
 }
 
 .centerDiv {
@@ -48,64 +46,6 @@ body {
 #msg {
   width: 50%;
   margin: auto;
-}
-
-.mainDiv img {
-  transform: scaleX(-1);
-  width: 6%;
-  position: relative;
-  animation: cycle 20s infinite;
-}
-
-@keyframes cycle {
-  0% {
-    top: 0px;
-    left: 0px;
-  }
-  5% {
-    top: 0px;
-    left: 5rem;
-  }
-  10% {
-    top: 0px;
-    left: 10rem;
-  }
-  20% {
-    top: 0px;
-    left: 20rem;
-  }
-  30% {
-    top: 0px;
-    left: 30rem;
-  }
-  40% {
-    top: 0px;
-    left: 40rem;
-  }
-  50% {
-    top: 0px;
-    left: 50rem;
-  }
-  60% {
-    top: 0px;
-    left: 60rem;
-  }
-  70% {
-    top: 0px;
-    left: 70rem;
-  }
-  80% {
-    top: 0px;
-    left: 80rem;
-  }
-  90% {
-    top: 0px;
-    left: 90rem;
-  }
-  100% {
-    top: 0px;
-    left: 98rem;
-  }
 }
 
 @media only screen and (max-width: 800px) {
